@@ -1,6 +1,15 @@
 <template>
   <div>
-    <h1>Default</h1>
+    <!-- top Nav -->
+    <div class="flex flex-col">
+      <div>
+        <NavBarTopTopNav/>        
+      </div>
+      <div>
+        <NavBarTopNav/>
+      </div>
+    </div>
+    <!-- pages -->
     <div>
       <slot/>
     </div>
