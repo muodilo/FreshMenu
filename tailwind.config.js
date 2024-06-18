@@ -49,6 +49,18 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+            // Adding custom utilities
+    utilities: {
+      '.hide-scrollbar': {
+        /* For most modern browsers */
+        '::-webkit-scrollbar': {
+          display: 'none',
+        },
+        /* For Internet Explorer, Edge and Firefox */
+        '-ms-overflow-style': 'none', // IE and Edge
+        'scrollbar-width': 'none',    // Firefox
+      },
+    },
       },
       borderRadius: {
       	xl: "calc(var(--radius) + 4px)",
@@ -82,5 +94,20 @@ module.exports = {
       },
     },
   },
-  plugins: [animate],
+  plugins: [
+    animate,
+      function ({ addUtilities }) {
+      const newUtilities = {
+        '.hide-scrollbar': {
+          '::-webkit-scrollbar': {
+            display: 'none',
+          },
+          '-ms-overflow-style': 'none', // IE and Edge
+          'scrollbar-width': 'none', // Firefox
+        },
+      }
+
+      addUtilities(newUtilities, ['responsive', 'hover'])
+    },
+  ],
 }

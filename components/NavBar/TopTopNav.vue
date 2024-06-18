@@ -1,5 +1,5 @@
 <template>
-  <div class="px-44 lg:grid grid-cols-5 border hidden">
+  <div class="px-44 lg:grid grid-cols-5 border hidden bg-white">
 
     <!-- left side -->
     <div class="col-span-3 flex items-center gap-10 py-2">

@@ -66,8 +66,8 @@
       </Carousel>
 
     </header>
-    <section class="px-44">
-      <div class="mt-5 flex items-center justify-between border-b border-neutral-500 pb-3 px-2">
+    <section class="px-44 h-[650px]  overflow-hidden">
+      <div class="mt-5 flex items-center justify-between border-b border-neutral-500 pb-3 px-2 ">
 
         <h1 class="text-xl">CATEGORIES</h1>
 
@@ -84,26 +84,99 @@
           <PopoverRoot>
             <PopoverTrigger class="" aria-label="Update dimensions">
               <div class="px-3 py-1 rounded  flex items-center">
-                <Icon name="jam:filter" class="text-2xl"/>
+                <Icon name="jam:filter" class="text-2xl" />
                 <h1>PRICE</h1>
               </div>
 
             </PopoverTrigger>
             <PopoverPortal>
-              <PopoverContent side="bottom" :side-offset="5" class="rounded p-5 w-[260px] bg-white shadow-[0_10px_38px_-10px_hsla(206,22%,7%,.35),0_10px_20px_-15px_hsla(206,22%,7%,.2)] focus:shadow-[0_10px_38px_-10px_hsla(206,22%,7%,.35),0_10px_20px_-15px_hsla(206,22%,7%,.2),0_0_0_2px_theme(colors.green7)] will-change-[transform,opacity] data-[state=open]:data-[side=top]:animate-slideDownAndFade data-[state=open]:data-[side=right]:animate-slideLeftAndFade data-[state=open]:data-[side=bottom]:animate-slideUpAndFade data-[state=open]:data-[side=left]:animate-slideRightAndFade">
-                <div class="flex flex-col gap-2.5">
+              <PopoverContent side="bottom" :side-offset="5" class="rounded  w-[360px] bg-white shadow-[0_10px_38px_-10px_hsla(206,22%,7%,.35),0_10px_20px_-15px_hsla(206,22%,7%,.2)] focus:shadow-[0_10px_38px_-10px_hsla(206,22%,7%,.35),0_10px_20px_-15px_hsla(206,22%,7%,.2),0_0_0_2px_theme(colors.green7)] will-change-[transform,opacity] data-[state=open]:data-[side=top]:animate-slideDownAndFade data-[state=open]:data-[side=right]:animate-slideLeftAndFade data-[state=open]:data-[side=bottom]:animate-slideUpAndFade data-[state=open]:data-[side=left]:animate-slideRightAndFade">
+                <div class="flex flex-col gap-2.5 p-5">
                   <div class="flex items-center justify-between">
                     <h1>FILTERS</h1>
                     <h1 class="text-red-500">Reset All Filters</h1>
                   </div>
+
+                  <div class="mb-2">
+                    <h1 class="text-sm">Food Preference</h1>
+                    <div class="flex gap-4 pt-2 flex-wrap">
+                      <p class="border px-3 py-1 rounded-xl text-slate-400">Veg</p>
+                      <p class="border px-3 py-1 rounded-xl text-slate-400">Contain Eggs</p>
+                      <p class="border px-3 py-1 rounded-xl text-slate-400">Non Veg</p>
+                    </div>
+                  </div>
+
+                  <div class="mb-2">
+                    <h1 class="text-sm">Cuisine</h1>
+                    <div class="flex gap-4 pt-2 flex-wrap">
+                      <p class="border px-3 py-1 rounded-xl text-slate-400">Continental</p>
+                      <p class="border px-3 py-1 rounded-xl text-slate-400">Fusion</p>
+                      <p class="border px-3 py-1 rounded-xl text-slate-400">Asian</p>
+                      <p class="border px-3 py-1 rounded-xl text-slate-400">Mexican</p>
+                    </div>
+                  </div>
+
+
+                  <div class="mb-2">
+                    <h1 class="text-sm">Trending</h1>
+                    <div class="flex gap-4 pt-2 flex-wrap">
+                      <p class="border px-3 py-1 rounded-xl text-slate-400">Desserts</p>
+                      <p class="border px-3 py-1 rounded-xl text-slate-400">Best Offers</p>
+                    </div>
+                  </div>
+
+
                 </div>
                 <PopoverClose class="" aria-label="Close">
                   <!-- <Icon name="radix-icons:cross-2" /> -->
                 </PopoverClose>
                 <PopoverArrow class="fill-white" />
+                <div class="bg-orange-600 py-3 flex justify-center text-white">
+                  Apply (8 Dishes )
+                </div>
               </PopoverContent>
             </PopoverPortal>
           </PopoverRoot>
+        </div>
+      </div>
+
+      <div class="flex items-start mt-7">
+        <Sidebar />
+        <div class="grow h-svh hide-scrollbar overflow-auto ">
+          <h1 class="text-4xl">ALL DAY BREAKFAST</h1>
+          <div class="grid grid-cols-3 gap-3 p-3">
+
+            <div v-for="(_,i) in 12">
+              <div>
+                  <div class="flex items-center gap-2">
+                    <div class="h-4 w-4 flex items-center justify-center border border-red-500 rounded">
+                      <div class="h-1 w-1 bg-red-500">
+
+                      </div>
+                    </div>
+                    <h1 class="text-slate-400">CONTINENTAL</h1>
+                  </div>
+                
+                <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                  <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="https://images.pexels.com/photos/936611/pexels-photo-936611.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="blog">
+                  <div class="p-2">
+                    <h2 class="tracking-widest title-font font-medium text-gray-400 mb-1">High Protein English Breakfast</h2>
+                    <div class="flex items-center justify-between">
+                      <div>
+                        dd
+                      </div>
+                      <div>
+                        rr
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
         </div>
       </div>
 
