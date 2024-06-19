@@ -51,7 +51,7 @@ const cartStore = useCartStore();
 
 <template>
   <div>
-    <header class="lg:flex justify-center px-14 mt-5 hidden">
+    <header class="md:flex justify-center px-14 mt-5 hidden">
       <Carousel class="relative w-full" :opts="{ align: 'start' }" :plugins="[plugin]" @mouseenter="plugin.stop" @mouseleave="[plugin.reset(), plugin.play(), console.log('Running')]">
         <CarouselContent class="-ml-1">
           <CarouselItem v-for="(category, index) in categories" :key="index" class="pl-1 md:basis-1/2 lg:basis-1/3">
@@ -64,8 +64,8 @@ const cartStore = useCartStore();
         <CarouselNext />
       </Carousel>
     </header>
-    <section class="px-44 h-[650px] overflow-hidden">
-      <div class="mt-5 flex items-center justify-between border-b border-neutral-500 pb-3 px-2">
+    <section class="lg:px-44 md:px-10 md:h-[650px] h-svh md:overflow-hidden">
+      <div class="mt-5 md:flex items-center justify-between border-b border-neutral-500 pb-3 px-2 hidden">
         <h1 class="text-xl">CATEGORIES</h1>
         <div class="flex items-center gap-2">
           <h1 class="border px-3 py-1 rounded border-black">VEG</h1>
@@ -125,9 +125,9 @@ const cartStore = useCartStore();
       </div>
       <div class="flex items-start mt-7">
         <Sidebar />
-        <div class="grow h-[550px] hide-scrollbar overflow-auto">
-          <h1 class="text-4xl">ALL DAY BREAKFAST</h1>
-          <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3 p-3">
+        <div class="grow md:h-[550px] h-svh hide-scrollbar overflow-auto">
+          <h1 class="md:text-4xl md:text-left text-xl text-center">ALL DAY BREAKFAST</h1>
+          <div class="grid lg:grid-cols-3 grid-cols-2  gap-3 p-3">
             <div v-for="(product) in products" :key="product.id">
               <div>
                 <div class="flex items-center gap-2">

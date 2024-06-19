@@ -33,7 +33,7 @@
 </script>
 
 <template>
-  <div ref="scrollContainer" class="h-screen overflow-auto hide-scrollbar">
+  <div ref="scrollContainer" class="h-svh overflow-auto hide-scrollbar">
     <div class="flex">
       <div class="grow">
         <!-- top Nav -->
@@ -44,9 +44,12 @@
           <div class="fixed-top-adjust">
             <NavBarTopNav :showTopTopNav="showTopTopNav" />
           </div>
+          <div class="md:hidden  grid">
+            <NavBarPhoneNav/>
+          </div>
         </div>
         <!-- pages -->
-        <div class="pt-40">
+        <div class="md:pt-40 pt-10 ">
           <slot />
         </div>
       </div>

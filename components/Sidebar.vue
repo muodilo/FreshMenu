@@ -18,7 +18,7 @@ const menuItems = ref([
 </script>
 
 <template>
-  <div class="w-[250px]">
+  <div class="lg:w-[250px] md:grid hidden">
     <ul class="grid gap-5">
       <li v-for="(item, index) in menuItems" :key="index" >
       <p class="hover:border-b-2 hover:text-xl border-red-500 inline cursor-pointer">{{ item }}</p> 

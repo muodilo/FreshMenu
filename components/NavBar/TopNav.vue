@@ -36,7 +36,7 @@ const cartStore = useCartStore();
 </script>
 
 <template>
-  <div class="px-44 grid grid-cols-5 border shadow-lg bg-white">
+  <div class="lg:px-44 md:px-10 md:grid grid-cols-5 border shadow-lg bg-white hidden">
     <!-- left side -->
     <div class="py-2 col-span-3" :class="{ 'invisible': props.showTopTopNav }">
       <!-- logo -->
