@@ -21,7 +21,7 @@ const menuItems = ref([
   <div class="w-[250px]">
     <ul class="grid gap-5">
       <li v-for="(item, index) in menuItems" :key="index" >
-      <p class="hover:border-b-2 hover:text-xl border-red-500 inline">{{ item }}</p> 
+      <p class="hover:border-b-2 hover:text-xl border-red-500 inline cursor-pointer">{{ item }}</p> 
       </li>
     </ul>
   </div>

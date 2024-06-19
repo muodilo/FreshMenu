@@ -1,11 +1,5 @@
 <script setup lang="ts">
 import { defineProps } from 'vue';
-
-// Accept showTopTopNav as a prop
-const props = defineProps<{
-  showTopTopNav: boolean;
-}>();
-
 import {
   Button
 } from '@/components/ui/button'
@@ -15,13 +9,6 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
-
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from '@/components/ui/hover-card'
-
 import {
   Dialog,
   DialogContent,
@@ -31,7 +18,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog'
-
 import {
   PopoverArrow,
   PopoverClose,
@@ -39,7 +25,14 @@ import {
   PopoverPortal,
   PopoverRoot,
   PopoverTrigger
-} from 'radix-vue'
+} from 'radix-vue';
+
+// Accept showTopTopNav as a prop
+const props = defineProps<{
+  showTopTopNav: boolean;
+}>();
+
+const cartStore = useCartStore();
 </script>
 
 <template>
@@ -85,8 +78,8 @@ import {
             <Icon name="mdi:user-key-outline" class="text-2xl text-slate-600" />
           </PopoverTrigger>
           <PopoverPortal>
-            <PopoverContent side="bottom" :side-offset="5" class="rounded p-5 w-[260px] bg-white shadow-[0_10px_38px_-10px_hsla(206,22%,7%,.35),0_10px_20px_-15px_hsla(206,22%,7%,.2)] focus:shadow-[0_10px_38px_-10px_hsla(206,22%,7%,.35),0_10px_20px_-15px_hsla(206,22%,7%,.2),0_0_0_2px_theme(colors.green7)] will-change-[transform,opacity] data-[state=open]:data-[side=top]:animate-slideDownAndFade data-[state=open]:data-[side=right]:animate-slideLeftAndFade data-[state=open]:data-[side=bottom]:animate-slideUpAndFade data-[state=open]:data-[side=left]:animate-slideRightAndFade">
-              <div class="flex flex-col gap-2.5">
+            <PopoverContent side="bottom" :side-offset="5" class="rounded p-5 w-[260px] bg-white shadow-[0_10px_38px_-10px_hsla(206,22%,7%,.35),0_10px_20px_-15px_hsla(206,22%,7%,.2)] focus:shadow-[0_10px_38px_-10px_hsla(206,22%,7%,.35),0_10px_20px_-15px_hsla(206,22%,7%,.2),0_0_0_2px_theme(colors.green7)] will-change-[transform,opacity] data-[state=open]:data-[side=top]:animate-slideDownAndFade data-[state=open]:data-[side=right]:animate-slideLeftAndFade data-[state=open]:data-[side=bottom]:animate-slideUpAndFade data-[state=open]:data-[side=left]:animate-slideRightAndFade z-30">
+              <div class="flex flex-col gap-2.5 ">
                 <Dialog>
                   <DialogTrigger as-child>
                     <Button variant="solid" class="hover:text-red-500">
@@ -133,12 +126,13 @@ import {
             </PopoverContent>
           </PopoverPortal>
         </PopoverRoot>
+
         <div class="h-full flex items-center flex-col justify-center bg-yellow-500">
-          <p>1</p>
+          <p v-if="cartStore.totalQuantity > 0" class="text-xs">{{ cartStore.totalQuantity }}</p>
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger as-child>
-                <Button variant="solid">
+                <Button variant="solid" @click="cartStore.toggleCart(!cartStore.isCartOpen)">
                   <Icon name="mdi-light:cart" class="text-3xl" />
                 </Button>
               </TooltipTrigger>
