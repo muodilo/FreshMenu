@@ -36,16 +36,16 @@
       <h1 class="mt-5 text-slate-900 ">NUTRITION</h1>
         <div class="flex flex-wrap gap-10 mt-5">
 
-          <div>
+          <div class="text-center">
             <h1>449</h1>
             <p>ENERGY(KCAL)</p>
           </div>
 
           
 
-          <div>
-            <h1>449</h1>
-            <p>ENERGY(KCAL)</p>
+          <div class="text-center">
+            <h1>63</h1>
+            <p>Carbs (g)</p>
           </div>
 
 
