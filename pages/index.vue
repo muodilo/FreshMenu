@@ -51,7 +51,7 @@ const cartStore = useCartStore();
 
 <template>
   <div>
-    <header class="md:flex justify-center px-14 mt-5 hidden">
+    <header class="md:flex justify-center px-14 mt-5 hidden md:pt-40 pt-10 ">
       <Carousel class="relative w-full" :opts="{ align: 'start' }" :plugins="[plugin]" @mouseenter="plugin.stop" @mouseleave="[plugin.reset(), plugin.play(), console.log('Running')]">
         <CarouselContent class="-ml-1">
           <CarouselItem v-for="(category, index) in categories" :key="index" class="pl-1 md:basis-1/2 lg:basis-1/3">

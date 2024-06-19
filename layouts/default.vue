@@ -49,7 +49,7 @@
           </div>
         </div>
         <!-- pages -->
-        <div class="md:pt-40 pt-10 ">
+        <div>
           <slot />
         </div>
       </div>
