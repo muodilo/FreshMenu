@@ -5,12 +5,12 @@
     <div class="col-span-3 flex items-center gap-10 py-2">
 
       <!-- logo -->
-      <div class="flex items-center">
-        <div class="w-[47px]  ">
-          <img src="@/assets/freshLogo.png"/>
+      <NuxtLink href="/" class="flex items-center">
+        <div class="w-[47px]">
+          <img src="@/assets/freshLogo.png" />
         </div>
-          <h1 class="text-3xl font-bold">FreshMenu</h1>
-      </div>
+        <h1 class="text-3xl font-bold">FreshMenu</h1>
+      </NuxtLink>
       
       <div class="flex gap-1 items-center mt-2">
         <h1 class="text-neutral-400">Deliver To:</h1>

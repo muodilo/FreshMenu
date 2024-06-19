@@ -1,3 +1,18 @@
+<script setup>
+import { ref, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
+
+const product = ref(null);
+const route = useRoute();
+const productStore = useProductStore();
+
+onMounted(() => {
+  const productId = route.params.id;
+  product.value = productStore.getProductById(productId);
+  console.log(product.value)
+});
+</script>
+
 <template>
 
 <section class="text-gray-600 body-font overflow-hidden pt-10">
@@ -5,7 +20,7 @@
     <div class="lg:w-4/5 mx-auto flex flex-wrap">
       <img alt="ecommerce" class="lg:w-1/2 w-full lg:h-96 h-64 object-cover object-center rounded" src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
       <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-        <h1 class="text-gray-500 text-3xl title-font font-medium mb-4">High Protein English Breakfast</h1>
+        <h1 class="text-gray-500 text-3xl title-font font-medium mb-4">Classic French Toast Combo</h1>
 
         <div class="flex items-center gap-2 mb-4">
           <div class="h-3 w-3 border flex items-center justify-center border-red-500 rounded">
@@ -21,6 +36,8 @@
                         </div>
                         <h1 class="text-blue-500 border border-blue-500 px-3">40% OFF</h1>
                       </div>
+
+                      <button class="w-28 bg-orange-500 text-white py-2 rounded-3xl mb-2">ADD</button>
                       <h1 class="text-slate-900 mb-2">DETAILS ABOUT THIS MEAL</h1>
 
         <p class="leading-relaxed">Experience the original flavors of a typical French breakfast with our delightful bowl. Our take on this French toast combines the classic dish of bread soaked in a rich custard made with Eggs, milk, cream and sugar griddled to perfection. Indulge in this savory and satisfying treat, perfect for on-the-go snacks or a power-packed protein snack.</p>

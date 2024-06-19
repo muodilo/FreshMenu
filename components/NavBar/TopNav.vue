@@ -40,12 +40,12 @@ const cartStore = useCartStore();
     <!-- left side -->
     <div class="py-2 col-span-3" :class="{ 'invisible': props.showTopTopNav }">
       <!-- logo -->
-      <div class="flex items-center">
+      <NuxtLink href="/" class="flex items-center">
         <div class="w-[47px]">
           <img src="@/assets/freshLogo.png" />
         </div>
         <h1 class="text-3xl font-bold">FreshMenu</h1>
-      </div>
+      </NuxtLink>
     </div>
 
     <!-- right side -->

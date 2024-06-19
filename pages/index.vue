@@ -47,6 +47,9 @@ const categories = ref([{
 
 const { products } = useProductStore();
 const cartStore = useCartStore();
+const handleImageClick = (id) => {
+  navigateTo(`/products/${id}`)
+}
 </script>
 
 <template>
@@ -137,7 +140,9 @@ const cartStore = useCartStore();
                   <h1 class="text-slate-400">CONTINENTAL</h1>
                 </div>
                 <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-                  <img class="lg:h-48 md:h-36 w-full object-cover object-center" :src="product.Image" alt="product image">
+                  <img class="lg:h-48 md:h-36 w-full object-cover object-center cursor-pointer hover:scale-105 duration-300 overflow-hidden" :src="product.Image" alt="product image"
+                  @click="handleImageClick(product.id)"
+                  >
                   <div class="p-2">
                     <h2 class="tracking-widest title-font font-medium text-gray-400 mb-1">{{product.name}}</h2>
                     <div class="flex items-center justify-between">
