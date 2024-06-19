@@ -120,7 +120,7 @@ const cartStore = useCartStore();
                 </Dialog>
               </div>
               <PopoverClose class="rounded-full h-[25px] w-[25px] inline-flex items-center justify-center text-grass11 absolute top-[5px] right-[5px] hover:bg-green4 focus:shadow-[0_0_0_2px] focus:shadow-green7 outline-none cursor-default" aria-label="Close">
-                <Icon icon="radix-icons:cross-2" />
+                <Icon name="radix-icons:cross-2" />
               </PopoverClose>
               <PopoverArrow class="fill-white" />
             </PopoverContent>
