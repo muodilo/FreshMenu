@@ -1,55 +1,57 @@
 <script setup lang="ts">
-import Autoplay from 'embla-carousel-autoplay'
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious
-} from '@/components/ui/carousel'
+  import Autoplay from 'embla-carousel-autoplay'
+  import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious
+  } from '@/components/ui/carousel'
 
-import {
-  PopoverArrow,
-  PopoverClose,
-  PopoverContent,
-  PopoverPortal,
-  PopoverRoot,
-  PopoverTrigger
-} from 'radix-vue';
+  import {
+    PopoverArrow,
+    PopoverClose,
+    PopoverContent,
+    PopoverPortal,
+    PopoverRoot,
+    PopoverTrigger
+  } from 'radix-vue';
 
-const plugin = Autoplay({
-  delay: 2000,
-  stopOnMouseEnter: true,
-  stopOnInteraction: false,
-})
+  const plugin = Autoplay({
+    delay: 2000,
+    stopOnMouseEnter: true,
+    stopOnInteraction: false,
+  })
 
-const categories = ref([{
-    category: 'beef',
-    image: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-  },
-  {
-    category: 'beef',
-    image: 'https://images.pexels.com/photos/840216/pexels-photo-840216.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-  },
-  {
-    category: 'beef',
-    image: 'https://images.pexels.com/photos/691114/pexels-photo-691114.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-  },
-  {
-    category: 'beef',
-    image: 'https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-  },
-  {
-    category: 'beef',
-    image: 'https://images.pexels.com/photos/3053082/pexels-photo-3053082.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-  },
-])
+  const categories = ref([{
+      category: 'beef',
+      image: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    },
+    {
+      category: 'beef',
+      image: 'https://images.pexels.com/photos/840216/pexels-photo-840216.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    },
+    {
+      category: 'beef',
+      image: 'https://images.pexels.com/photos/691114/pexels-photo-691114.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    },
+    {
+      category: 'beef',
+      image: 'https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    },
+    {
+      category: 'beef',
+      image: 'https://images.pexels.com/photos/3053082/pexels-photo-3053082.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    },
+  ])
 
-const { products } = useProductStore();
-const cartStore = useCartStore();
-const handleImageClick = (id) => {
-  navigateTo(`/products/${id}`)
-}
+  const {
+    products
+  } = useProductStore();
+  const cartStore = useCartStore();
+  const handleImageClick = (id) => {
+    navigateTo(`/products/${id}`)
+  }
 </script>
 
 <template>
@@ -140,21 +142,23 @@ const handleImageClick = (id) => {
                   <h1 class="text-slate-400">CONTINENTAL</h1>
                 </div>
                 <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-                  <img class="lg:h-48 md:h-36 w-full object-cover object-center cursor-pointer hover:scale-105 duration-300 overflow-hidden" :src="product.Image" alt="product image"
-                  @click="handleImageClick(product.id)"
-                  >
+                  <img class="lg:h-48 md:h-36 w-full object-cover object-center cursor-pointer hover:scale-105 duration-300 overflow-hidden" :src="product.Image" alt="product image" @click="handleImageClick(product.id)">
                   <div class="p-2">
                     <h2 class="tracking-widest title-font font-medium text-gray-400 mb-1">{{product.name}}</h2>
                     <div class="flex items-center justify-between">
                       <div>
                         <div class="flex items-center gap-2">
-                          <h1 class="text-2xl"><Icon name="ph:currency-inr-bold"/> {{product.price}}</h1>
-                          <h1 class="text-slate-400 line-through"><Icon name="ph:currency-inr-bold"/> {{product.discountPrice}}</h1>
+                          <h1 class="text-2xl">
+                            <Icon name="ph:currency-inr-bold" /> {{product.price}}
+                          </h1>
+                          <h1 class="text-slate-400 line-through">
+                            <Icon name="ph:currency-inr-bold" /> {{product.discountPrice}}
+                          </h1>
                         </div>
                         <h1>40% OFF</h1>
                       </div>
                       <div>
-                        <button @click="cartStore.addToCart(product)" class="px-7 py-1 bg-orange-500 rounded-xl text-white">
+                        <button @click="cartStore.addToCart(product)" class="w-24 py-2 bg-orange-500 rounded-2xl text-white">
                           {{ cartStore.getProductQuantity(product.id) > 0 ?  cartStore.getProductQuantity(product.id) : 'ADD' }}
                         </button>
                       </div>
