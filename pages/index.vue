@@ -1,4 +1,6 @@
 <script setup lang="ts">
+
+const isPopoverVisible = ref(false);
   import Autoplay from 'embla-carousel-autoplay'
   import {
     Carousel,
@@ -22,6 +24,7 @@
     stopOnMouseEnter: true,
     stopOnInteraction: false,
   })
+
 
   const categories = ref([{
       category: 'beef',
@@ -48,15 +51,19 @@
   const {
     products
   } = useProductStore();
-  const cartStore = useCartStore();
+const cartStore = useCartStore();
+  const togglePopover = () => {
+  isPopoverVisible.value = !isPopoverVisible.value;
+};
   const handleImageClick = (id) => {
     navigateTo(`/products/${id}`)
-  }
+}
+  
 </script>
 
 <template>
   <div>
-    <header class="md:flex justify-center px-14 mt-5 hidden md:pt-40 pt-10 ">
+    <header class="md:flex justify-center px-14 mt-5 hidden md:pt-40 pt-10">
       <Carousel class="relative w-full" :opts="{ align: 'start' }" :plugins="[plugin]" @mouseenter="plugin.stop" @mouseleave="[plugin.reset(), plugin.play(), console.log('Running')]">
         <CarouselContent class="-ml-1">
           <CarouselItem v-for="(category, index) in categories" :key="index" class="pl-1 md:basis-1/2 lg:basis-1/3">
@@ -78,7 +85,8 @@
             <h1>PRICE</h1>
             <Icon name="oui:menu-down" />
           </div>
-          <PopoverRoot>
+          <!-- Apply md:hidden to hide on screens smaller than md -->
+          <PopoverRoot class="md:hidden">
             <PopoverTrigger aria-label="Update dimensions">
               <div class="px-3 py-1 rounded flex items-center">
                 <Icon name="jam:filter" class="text-2xl" />
@@ -117,9 +125,8 @@
                     </div>
                   </div>
                 </div>
-                <PopoverClose aria-label="Close">
-                </PopoverClose>
-                <PopoverArrow class="fill-white" />
+                <PopoverClose aria-label="Close"></PopoverClose>
+                <PopoverArrow class="fill-white"></PopoverArrow>
                 <div class="bg-orange-600 py-3 flex justify-center text-white">
                   Apply (8 Dishes)
                 </div>
