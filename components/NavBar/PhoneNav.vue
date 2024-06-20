@@ -11,9 +11,9 @@ import {
 <template>
   <div class="md:hidden border bg-white">
     <div class="flex items-center">
-      <div class="w-[47px]">
+      <NuxtLink href="/" class="w-[47px]">
         <img src="@/assets/freshLogo.png" />
-      </div>
+      </NuxtLink>
         <div class="md:invisible visible">
        <PopoverRoot>
           <PopoverTrigger class="inline-flex items-center justify-center outline-none" aria-label="Update dimensions">
