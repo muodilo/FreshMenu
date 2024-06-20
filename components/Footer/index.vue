@@ -61,7 +61,7 @@
       </div>
     </div>
   </footer>
-  <footer class="text-gray-600 body-font bg-neutral-700 pt-5">
+  <footer class="text-gray-600 body-font bg-neutral-700 pt-5 md:mt-0 mt-10">
     <div class="container px-5  mx-auto">
       <div class="flex flex-wrap md:text-left text-center order-first">
         <div class="lg:w-1/4 md:w-1/2 w-full px-4">
