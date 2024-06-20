@@ -21,8 +21,19 @@ import {
           </PopoverTrigger>
           <PopoverPortal>
             <PopoverContent side="bottom" :side-offset="5" class="rounded p-5 w-[260px] bg-white shadow-[0_10px_38px_-10px_hsla(206,22%,7%,.35),0_10px_20px_-15px_hsla(206,22%,7%,.2)] focus:shadow-[0_10px_38px_-10px_hsla(206,22%,7%,.35),0_10px_20px_-15px_hsla(206,22%,7%,.2),0_0_0_2px_theme(colors.green7)] will-change-[transform,opacity] data-[state=open]:data-[side=top]:animate-slideDownAndFade data-[state=open]:data-[side=right]:animate-slideLeftAndFade data-[state=open]:data-[side=bottom]:animate-slideUpAndFade data-[state=open]:data-[side=left]:animate-slideRightAndFade z-30">
-              <div class="flex flex-col gap-2.5 md:visible ">
-
+              <div class="flex flex-col gap-2.5 md:hidden">
+                <button class="bg-orange-400 text-white py-1 rounded-3xl">Log In </button>
+                <button class="bg-orange-400 text-white py-1 rounded-3xl">Sign Up</button>
+                <hr>
+                <h1 class="font-bold">CATEGORIES</h1>
+                <div>
+                  <ul>
+                    <li>All Day Breakfast</li>
+                    <li>Omelette's</li>
+                    <li>Omelette's</li>
+                    <li>Bowls</li>
+                  </ul>
+                </div>
               </div>
               <PopoverClose class="rounded-full h-[25px] w-[25px] inline-flex items-center justify-center text-grass11 absolute top-[5px] right-[5px] hover:bg-green4  outline-none cursor-default" aria-label="Close">
                 <Icon name="radix-icons:cross-2" />

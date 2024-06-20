@@ -1,5 +1,5 @@
 <script setup lang="ts">
-
+import { ref, onMounted } from 'vue';
 const isPopoverVisible = ref(false);
   import Autoplay from 'embla-carousel-autoplay'
   import {
@@ -50,7 +50,8 @@ const isPopoverVisible = ref(false);
 
   const {
     products
-  } = useProductStore();
+} = useProductStore();
+  const filteredProducts = ref([]);
 const cartStore = useCartStore();
   const togglePopover = () => {
   isPopoverVisible.value = !isPopoverVisible.value;
